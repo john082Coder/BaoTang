@@ -9,7 +9,7 @@ const UploadedTable = ({isUpload, resetState, isStart}) => {
         try {
           const {
             data: {data},
-          } = await axios.get("http://localhost:3001/file/");
+          } = await axios.get("http://193.148.63.79:3001/file/");
           console.log("data: ", data);
           setFiles(data);
         } catch (e) {
@@ -21,7 +21,7 @@ const UploadedTable = ({isUpload, resetState, isStart}) => {
     console.log("isUpload: ", isUpload);
   }, [isUpload]);
   const handleDownload = async (filename, orginalName) => {
-    fetch(`http://localhost:3001/${filename}`).then((response) => {
+    fetch(`http://193.148.63.79:3001/${filename}`).then((response) => {
       response.blob().then((blob) => {
         let url = window.URL.createObjectURL(blob);
         let a = document.createElement("a");

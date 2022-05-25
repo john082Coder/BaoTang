@@ -32,7 +32,7 @@ const UploadFile = (props) => {
       fd.append("myFile", audio);
       console.log("audio: ", audio);
 
-      let response = await axios.post("http://localhost:3001/file/", fd);
+      let response = await axios.post("http://193.148.63.79:3001/file/", fd);
       console.log("response: ", response);
       resetHandler(fd);
       props.handleState();
